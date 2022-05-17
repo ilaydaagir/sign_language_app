@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sl_2/models/foods_dart.dart';
-import 'screens_food/food_screen_1.dart';
+import 'package:sl_2/models/QuizScreen.dart';
+
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Food_screen()));
+                                  builder: (context) => Food()));
                         },
                         title: Text(
                           "FOOD",
@@ -146,10 +146,10 @@ class MyApp extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Food_screen()));
+                                builder: (context) => Food()));
                       },
                       focusColor: Colors.green,
-                      title: Text(
+                      title: const Text(
                         "BEVERAGES",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
