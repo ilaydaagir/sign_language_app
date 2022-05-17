@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sl_2/screens_food/food_screen_1.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Food extends StatefulWidget {
   @override
@@ -9,6 +9,12 @@ class Food extends StatefulWidget {
 }
 
 class FoodBody extends State {
+
+  YoutubePlayerController _controller = YoutubePlayerController(initialVideoId: "GMY_CnrPYIg",
+      flags: YoutubePlayerFlags(
+          autoPlay: true,
+          mute: false
+      ));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +34,11 @@ class FoodBody extends State {
               style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)),
           SizedBox(height: 40.0),
           Container(
-            child: Center(child: Text("VIDEO")),
+            child: Center(child: YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: Colors.green,
+            )),
             height: 120.0,
             width: 120.0,
             color: Colors.red,
